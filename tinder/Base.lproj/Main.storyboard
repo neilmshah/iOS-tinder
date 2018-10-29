@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cards View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="nzU-V1-Ce8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="Vqx-BG-rpr">
+                                <rect key="frame" x="32" y="466" width="311" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="cNC-tp-sEM">
+                                <rect key="frame" x="16" y="97" width="340" height="360"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="y5M-dq-VIQ" appends="YES" id="DCM-Hu-7Wl"/>
+                                    <outletCollection property="gestureRecognizers" destination="0bT-98-gbZ" appends="YES" id="Qaq-WX-G4S"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dWq-7i-cVz"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="cNC-tp-sEM" id="4eM-CJ-1Tt"/>
+                        <segue destination="qiW-K8-jnK" kind="show" identifier="profileSegue" id="hTq-DY-Zco"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="y5M-dq-VIQ">
+                    <connections>
+                        <action selector="didPanProfile:" destination="BYZ-38-t0r" id="UON-t8-d0I"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="0bT-98-gbZ">
+                    <connections>
+                        <action selector="onTapProfilePic:" destination="BYZ-38-t0r" id="rsI-Il-iGq"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="26.53673163418291"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="B0U-E8-qUd">
+            <objects>
+                <viewController id="qiW-K8-jnK" customClass="ProfileViewController" customModule="tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rLH-Jh-5ak">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="dWC-et-gYz">
+                                <rect key="frame" x="0.0" y="31" width="375" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsO-8N-GaK">
+                                <rect key="frame" x="8" y="61" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onClickDone:" destination="qiW-K8-jnK" eventType="touchUpInside" id="XC7-pA-b0D"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="kRs-gu-nHh">
+                                <rect key="frame" x="8" y="108" width="359" height="385"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6iy-Wa-7e2"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="kRs-gu-nHh" id="NPq-X6-a1E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzq-p7-pie" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1858.4000000000001" y="23.838080959520241"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="action_buttons" width="320" height="108"/>
+        <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
+        <image name="ryan" width="449" height="514"/>
+    </resources>
+</document>
